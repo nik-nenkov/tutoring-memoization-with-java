@@ -5,9 +5,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class BlackAndWhite {
+
     private static ArrayList<boolean[]> possibleRows = new ArrayList<>();
     private static ArrayList<int[]> possibleNextRows = new ArrayList<>();
     private static HashMap<KeyOfTwo, BigInteger> mapOfValues = new HashMap<>();
+    // private static HashMap<HashMap<Integer,Integer>, BigInteger> mapOfValues = new HashMap<>();
 
     private static void computeNextRows() {
         for (int i = 0; i < possibleRows.size(); i++) {
@@ -62,7 +64,11 @@ public class BlackAndWhite {
     }
 
     private static BigInteger countAll(int currentPosition, int numberOfRows, int currentRow) {
+        // HashMap<Integer,Integer> hm = new HashMap<>();
+        // hm.put(currentPosition, currentRow);
+
         KeyOfTwo k = new KeyOfTwo(currentPosition, currentRow);
+
         if (!mapOfValues.containsKey(k)) {
             if (currentPosition == numberOfRows - 1) {
                 return BigInteger.valueOf(possibleNextRows.get(currentRow).length);
