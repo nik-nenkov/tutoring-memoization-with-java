@@ -1,8 +1,13 @@
+package com.programming.dynamic;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+
 
 public class BlackAndWhite {
 
@@ -86,6 +91,9 @@ public class BlackAndWhite {
     }
 
     public static void main(String[] args) {
+
+        Logger logger = LoggerFactory.getLogger(BlackAndWhite.class);
+        logger.info("This is how you configure Java Logging with SLF4J");
         Scanner sc = new Scanner(System.in);
         int rowSize = sc.nextInt();
         int numRows = sc.nextInt();
