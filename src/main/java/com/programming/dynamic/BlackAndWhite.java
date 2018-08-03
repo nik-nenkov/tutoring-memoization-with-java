@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-//TODO Limit board size OR optimize on shorter side !!!
+
 public class BlackAndWhite {
 
-    private static ArrayList<boolean[]> possibleRows = new ArrayList<>();
-    private static ArrayList<int[]> possibleNextRows = new ArrayList<>();
-    private static HashMap<KeyOfTwo, BigInteger> mapOfValues = new HashMap<>();
+    public static ArrayList<boolean[]> possibleRows = new ArrayList<>();
+    public static ArrayList<int[]> possibleNextRows = new ArrayList<>();
+    public static HashMap<KeyOfTwo, BigInteger> mapOfValues = new HashMap<>();
     // private static HashMap<HashMap<Integer,Integer>, BigInteger> mapOfValues = new HashMap<>();
 
-    private static void computeNextRows() {
+    public static void computeNextRows() {
         for (int i = 0; i < possibleRows.size(); i++) {
             int k = 0;
             for (boolean[] r : possibleRows) {
@@ -33,7 +33,7 @@ public class BlackAndWhite {
         }
     }
 
-    private static boolean compare(boolean[] a, boolean[] b) {
+    public static boolean compare(boolean[] a, boolean[] b) {
         if (a.length != b.length) {
             return false; //TODO this line of code never executes !!!
         } else {
@@ -47,12 +47,12 @@ public class BlackAndWhite {
         }
     }
 
-    private static boolean[] mutate(boolean[] a, int i) {
+    public static boolean[] mutate(boolean[] a, int i) {
         a[i] = !a[i];
         return a;
     }
 
-    private static int ways(boolean[] r, int j) {
+    public static int ways(boolean[] r, int j) {
         if ((j == 0 || !r[j - 1]) && j < r.length) {
             return ways(r, j + 1) + ways(mutate(r, j), j + 1);
         } else if (j == r.length) {
@@ -65,7 +65,7 @@ public class BlackAndWhite {
         }
     }
 
-    private static BigInteger countAll(int currentPosition, int numberOfRows, int currentRow) {
+    public static BigInteger countAll(int currentPosition, int numberOfRows, int currentRow) {
         // HashMap<Integer,Integer> hm = new HashMap<>();
         // hm.put(currentPosition, currentRow);
 
@@ -103,7 +103,7 @@ public class BlackAndWhite {
         System.out.println(countAll(0, numRows, 0));
     }
 
-    private static class KeyOfTwo {
+    public static class KeyOfTwo {
         Integer curPos;
         Integer curRow;
 
