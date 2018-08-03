@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-
+//TODO Limit board size OR optimize on shorter side !!!
 public class BlackAndWhite {
 
     private static ArrayList<boolean[]> possibleRows = new ArrayList<>();
@@ -35,7 +35,7 @@ public class BlackAndWhite {
 
     private static boolean compare(boolean[] a, boolean[] b) {
         if (a.length != b.length) {
-            return false;
+            return false; //TODO this line of code never executes !!!
         } else {
             boolean check = true;
             for (int i = 0; i < a.length; i++) {
