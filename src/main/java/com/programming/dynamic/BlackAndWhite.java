@@ -8,12 +8,12 @@ import java.util.Scanner;
 
 public class BlackAndWhite {
 
-    public static ArrayList<boolean[]> possibleRows = new ArrayList<>();
-    public static ArrayList<int[]> possibleNextRows = new ArrayList<>();
-    public static HashMap<KeyOfTwo, BigInteger> mapOfValues = new HashMap<>();
+    private static ArrayList<boolean[]> possibleRows = new ArrayList<>();
+    private static ArrayList<int[]> possibleNextRows = new ArrayList<>();
+    private static HashMap<KeyOfTwo, BigInteger> mapOfValues = new HashMap<>();
     // private static HashMap<HashMap<Integer,Integer>, BigInteger> mapOfValues = new HashMap<>();
 
-    public static void computeNextRows() {
+    private static void computeNextRows() {
         for (int i = 0; i < possibleRows.size(); i++) {
             int k = 0;
             for (boolean[] r : possibleRows) {
@@ -33,7 +33,7 @@ public class BlackAndWhite {
         }
     }
 
-    public static boolean compare(boolean[] a, boolean[] b) {
+    private static boolean compare(boolean[] a, boolean[] b) {
         if (a.length != b.length) {
             return false; //TODO this line of code never executes !!!
         } else {
@@ -47,12 +47,12 @@ public class BlackAndWhite {
         }
     }
 
-    public static boolean[] mutate(boolean[] a, int i) {
+    private static boolean[] mutate(boolean[] a, int i) {
         a[i] = !a[i];
         return a;
     }
 
-    public static int ways(boolean[] r, int j) {
+    private static int ways(boolean[] r, int j) {
         if ((j == 0 || !r[j - 1]) && j < r.length) {
             return ways(r, j + 1) + ways(mutate(r, j), j + 1);
         } else if (j == r.length) {
@@ -65,7 +65,7 @@ public class BlackAndWhite {
         }
     }
 
-    public static BigInteger countAll(int currentPosition, int numberOfRows, int currentRow) {
+    private static BigInteger countAll(int currentPosition, int numberOfRows, int currentRow) {
         // HashMap<Integer,Integer> hm = new HashMap<>();
         // hm.put(currentPosition, currentRow);
 
@@ -103,30 +103,4 @@ public class BlackAndWhite {
         System.out.println(countAll(0, numRows, 0));
     }
 
-    public static class KeyOfTwo {
-        Integer curPos;
-        Integer curRow;
-
-        KeyOfTwo(int cp, int cr) {
-            this.curPos = cp;
-            this.curRow = cr;
-        }
-
-        @Override
-        public boolean equals(Object object) {
-            return getClass() == object.getClass()
-                    && (((KeyOfTwo) object).curPos == null
-                    && ((KeyOfTwo) object).curRow == null || ((KeyOfTwo) object).curPos == null
-                    && ((KeyOfTwo) object).curRow.equals(this.curRow) || ((KeyOfTwo) object).curPos.equals(this.curPos)
-                    && ((KeyOfTwo) object).curRow == null || ((KeyOfTwo) object).curPos.equals(this.curPos)
-                    && ((KeyOfTwo) object).curRow.equals(this.curRow));
-        }
-
-        @Override
-        public int hashCode() {
-            int hashCode = this.curPos == null ? 0 : this.curPos.hashCode();
-            hashCode = hashCode + (this.curRow == null ? 0 : this.curRow.hashCode());
-            return hashCode;
-        }
-    }
 }
