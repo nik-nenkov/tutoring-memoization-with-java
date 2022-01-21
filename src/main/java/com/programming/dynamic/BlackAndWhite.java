@@ -22,5 +22,7 @@ public class BlackAndWhite {
 
         solver.findNumberOfPossibleSolutions();
         log.info(solver.getNumberOfSolutions().toString());
+
+        scanner.close();
     }
 }

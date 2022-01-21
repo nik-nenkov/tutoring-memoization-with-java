@@ -1,7 +1,5 @@
 package com.programming.dynamic.unused;
 
-import com.programming.dynamic.unused.Computable;
-
 import java.util.concurrent.*;
 
 public class Memoizer<A, V> implements Computable<A, V> {
