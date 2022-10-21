@@ -3,5 +3,5 @@ package com.programming.dynamic.unused;
 import java.util.concurrent.ExecutionException;
 
 public interface Computable<A, V> {
-    V compute(A arg) throws InterruptedException, ExecutionException;
+  V compute(A arg) throws InterruptedException, ExecutionException;
 }
