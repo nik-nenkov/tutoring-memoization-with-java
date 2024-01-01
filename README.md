@@ -1,6 +1,15 @@
-# black-and-white
+# Black-and-White Board Challenge
 
-answers the question:
-in how many different ways can we arrange a N x M board of black and white squares,
-so that no two neighbouring sqares are black
-might or might not be related to this youtube video:  [Dynamic Programming](https://www.youtube.com/watch?v=Hdr64lKQ3e4)
+## Introduction
+This repository contains a solution to a combinatorial puzzle: arranging black and white squares on an N x M board. The goal is to determine the number of possible arrangements where no two neighboring squares are black.
+
+## Problem Statement
+- **Task**: Count the different ways to arrange black and white squares on an N x M board.
+- **Constraint**: No two adjacent squares can be black.
+
+## Inspiration
+The solution employs dynamic programming concepts, which may be related to the principles discussed in this [Dynamic Programming YouTube Video](https://www.youtube.com/watch?v=Hdr64lKQ3e4).
+
+## Usage
+- Clone the repository to access the solution.
+- Review the code to understand the dynamic programming approach used.
