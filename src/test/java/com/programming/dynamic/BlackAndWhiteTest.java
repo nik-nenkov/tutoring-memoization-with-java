@@ -33,8 +33,4 @@ class BlackAndWhiteTest {
     @Test
     void countAll() {
     }
-
-    @Test
-    void main() {
-    }
 }

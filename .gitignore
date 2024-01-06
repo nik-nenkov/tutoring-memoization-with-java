@@ -89,3 +89,5 @@ hs_err_pid*
 /.idea/
 *.iml
 .idea
+
+desktop.ini
